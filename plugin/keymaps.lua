@@ -1,5 +1,4 @@
 local set = vim.keymap.set
-local k = vim.keycode
 
 -- Basic movement keybinds, these make navigating splits easy for me
 set("n", "<c-j>", "<c-w><c-j>")
@@ -27,21 +26,21 @@ set("n", "<M-t>", "<C-W>+")
 set("n", "<M-s>", "<C-W>-")
 
 set("n", "<M-j>", function()
-  if vim.opt.diff:get() then
-    vim.cmd [[normal! ]c]]
-  else
-    vim.cmd [[m .+1<CR>==]]
-  end
+	if vim.opt.diff:get() then
+		vim.cmd([[normal! ]c]])
+	else
+		vim.cmd([[m .+1<CR>==]])
+	end
 end)
 
 set("n", "<M-k>", function()
-  if vim.opt.diff:get() then
-    vim.cmd [[normal! [c]]
-  else
-    vim.cmd [[m .-2<CR>==]]
-  end
+	if vim.opt.diff:get() then
+		vim.cmd([[normal! [c]])
+	else
+		vim.cmd([[m .-2<CR>==]])
+	end
 end)
 
 set("n", "<space>tt", function()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 }, { bufnr = 0 })
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
 end)
