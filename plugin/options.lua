@@ -22,7 +22,7 @@ opt.shada = { "'10", "<0", "s10", "h" }
 opt.clipboard = "unnamedplus"
 
 -- Don't have `o` add a comment
-opt.formatoptions:remove "o"
+opt.formatoptions:remove("o")
 
 opt.tabstop = 2
 opt.softtabstop = 2

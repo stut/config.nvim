@@ -9,11 +9,6 @@ set("n", "<c-h>", "<c-w><c-h>")
 set("n", "<leader>x", "<cmd>.lua<CR>", { desc = "Execute the current line" })
 set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Execute the current file" })
 
--- Normally these are not good mappings, but I have left/right on my thumb
--- cluster, so navigating tabs is quite easy this way.
---set("n", "<left>", "gT")
---set("n", "<right>", "gt")
-
 -- There are builtin keymaps for this now, but I like that it shows
 -- the float when I navigate to the error - so I override them.
 set("n", "]d", vim.diagnostic.goto_next)
@@ -39,8 +34,4 @@ set("n", "<M-k>", function()
 	else
 		vim.cmd([[m .-2<CR>==]])
 	end
-end)
-
-set("n", "<space>tt", function()
-	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
 end)
